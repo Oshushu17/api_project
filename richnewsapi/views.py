@@ -4,10 +4,11 @@ import requests
 from rest_framework.decorators import api_view, APIView
 
 
+
 # Create your views here.
 @api_view(['GET'])
 def fetch_data(request):
-    API_KEY = 'hidden'
+    API_KEY = 'fetch_data_api'
     scan = request.query_params.get('lookup', None)
     url = f"http://eventregistry.org/api/v1/article/getArticles?actions=getArticles&keyword={scan}&articlePage=1&articleCount=10&resultType=articles&dataType=news&forceMaxDataTimeWindow=7&language=en&api_key=&apiKey={API_KEY}"
     if scan:
@@ -20,7 +21,7 @@ def fetch_data(request):
 
         
 
-api_key = "hidden"
+api_key = 'news_api_key'
 class NewsAPI(APIView):
     def get(self, request):
         search = request.query_params.get('keyword', None)
