@@ -1,5 +1,5 @@
 .env
 __pycache__/
 practise.py
-apiproject/settings.py
+apiproject/imoh.py
 .vscode/
